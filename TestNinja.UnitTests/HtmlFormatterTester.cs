@@ -15,17 +15,17 @@ namespace TestNinja.UnitTests
         public void Setup()
         {
             _htmlFormatter = new HtmlFormatter();
+            
         }
 
         [Test]
 
-        public void FormatAsBold_WhenCallString_ReturnString()
+        public void FormatAsBold_WhenCalled_ReturnStringAsStrong()
         {
-            string content = _htmlFormatter.FormatAsBold("content");
-
+            string content = "boldContent";
             string result = _htmlFormatter.FormatAsBold(content);
 
-            Assert.AreSame(result,content);
+            Assert.AreEqual(result,$"<strong>{content}</strong>");
             
         }
 
